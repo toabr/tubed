@@ -9,6 +9,9 @@
 # production
 /build
 
+# keys
+/src/data/yt_api_key.js
+
 # misc
 .DS_Store
 .env.local
