@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/yt-telly/static/media/fontawesome-webfont.674f50d2.eot"
   },
   {
-    "revision": "c52e2362783be7de802c",
+    "revision": "1ae66d0c4266b78bea8c",
     "url": "/yt-telly/static/css/main.a8610e0e.chunk.css"
   },
   {
@@ -12,16 +12,16 @@ self.__precacheManifest = [
     "url": "/yt-telly/static/media/fontawesome-webfont.912ec66d.svg"
   },
   {
-    "revision": "fbcd42d534aae391c16e",
-    "url": "/yt-telly/static/js/1.fbcd42d5.chunk.js"
+    "revision": "61fda6ce6feca3def7ae",
+    "url": "/yt-telly/static/js/1.61fda6ce.chunk.js"
   },
   {
     "revision": "a15be8f8a53ffc5246d2",
     "url": "/yt-telly/static/js/runtime~main.a15be8f8.js"
   },
   {
-    "revision": "c52e2362783be7de802c",
-    "url": "/yt-telly/static/js/main.c52e2362.chunk.js"
+    "revision": "1ae66d0c4266b78bea8c",
+    "url": "/yt-telly/static/js/main.1ae66d0c.chunk.js"
   },
   {
     "revision": "af7ae505a9eed503f8b8e6982036873e",
@@ -36,11 +36,11 @@ self.__precacheManifest = [
     "url": "/yt-telly/static/media/fontawesome-webfont.b06871f2.ttf"
   },
   {
-    "revision": "fbcd42d534aae391c16e",
+    "revision": "61fda6ce6feca3def7ae",
     "url": "/yt-telly/static/css/1.001c429a.chunk.css"
   },
   {
-    "revision": "0496c91b593432c6c3752d1e2aa991c5",
+    "revision": "0c7b127a833e06e64cf565a332927bcd",
     "url": "/yt-telly/index.html"
   }
 ];
