@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
 import { ytSearch } from '../data/yt_api';
-import ChannelList from './channel_feed/channel_list';
-import SearchForm from './channel_feed/search_form';
+import ChannelList from '../components/channel_list';
+import SearchForm from '../components/search_form';
 
 export default class SearchView extends Component {
   state = {

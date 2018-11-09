@@ -11,6 +11,9 @@ export const ytSearch = (opt,callback) => {
   })
   .then(data => {
     callback(data);
+  })
+  .catch((err) => {
+    console.log('ytSearch sagt:', err);
   });
 }
 
@@ -25,6 +28,9 @@ export const getChannel = (opt,callback) => {
   })
   .then(data => {
     callback(data.items[0]);
+  })
+  .catch((err) => {
+    console.log('getChannel sagt:', err);
   });
 }
 
@@ -41,6 +47,9 @@ export const getPlaylist = (opt,callback) => {
   })
   .then(data => {
     callback(data);
+  })
+  .catch((err) => {
+    console.log('getPlaylist sagt:', err);
   });
 }
 
@@ -58,6 +67,9 @@ export const getVideoData = (opt,callback) => {
     })
     .then(data => {
       callback(data);
+    })
+    .catch((err) => {
+      console.log('getVideoData sagt:', err);
     });
   }
 }

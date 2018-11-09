@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import moment from 'moment';
 
-import { getVideoData } from '../../data/yt_api'
+import { getVideoData } from '../data/yt_api'
 
 // expects an array of video id's
 export default class VideoData extends Component {

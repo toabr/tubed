@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 
-import localStore from '../data/local_store'
+import localStore from './data/local_store'
 
-import AppHeader from './app_header/app_header';
-import FeedView from './feed_view';
-import SearchView from './search_view';
-import ChannelView from './channel_view';
+import AppHeader from './components/app_header';
+import FeedView from './routes/feed_view';
+import SearchView from './routes/search_view';
+import ChannelView from './routes/channel_view';
 
 const Home = (props) => {
   return <Redirect to={`/category/${props.storedChannels[0].category}`} />
@@ -101,7 +101,7 @@ export default class App extends Component {
       <Router>
         <React.Fragment>
           <AppHeader />
-          <div className="container">
+          <div className="container-fluid">
             <div className="row">
               <div className="col">
                 {this.state.channels.length > 0 && this.state.routes.map((route, i) =>

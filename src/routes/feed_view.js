@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 // import components
-import ChannelList from './channel_feed/channel_list';
+import ChannelList from '../components/channel_list';
 
 export default class FeedView extends Component {
   render() {

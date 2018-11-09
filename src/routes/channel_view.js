@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
-import Channel from './channel_feed/channel';
-import Playlist from './channel_feed/playlist';
+import Channel from '../components/channel';
+import Playlist from '../components/playlist';
 
 export default class ChannelView extends Component {
   state = {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 // import data
-import { getChannel } from '../../data/yt_api'
+import { getChannel } from '../data/yt_api'
 
 // only channel-id needed
 export default class ChannelInfo extends Component {

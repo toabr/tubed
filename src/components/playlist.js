@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import data
-import { getPlaylist } from '../../data/yt_api'
+import { getPlaylist } from '../data/yt_api'
 // import components
 import VideoView from './video_view';
 import VideoData from './video_data';
