@@ -1,18 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
 import moment from 'moment';
-
-const Vimg = function({thumbnail}) {
-  return(
-    <div className="card-img-top" style={{ background: '#ddd' }} >
-      <img
-        width={thumbnail.width}
-        height={thumbnail.height}
-        src={thumbnail.url}
-        style={{ width: '100%', height: 'auto' }}
-      />
-    </div>
-  );
-}
 
 export default function VideoView({video}) {
   // console.log('VideoView: ', video);
@@ -21,22 +8,33 @@ export default function VideoView({video}) {
   let thumbnail = video.thumbnails.medium;
 
   return(
-    <a style={{textDecoration: 'none'}} href={`https://www.youtube.com/watch?v=${video.id}`} target="blank" >
-      <div className="card" style={{height:'100%'}}>
-        <Vimg thumbnail={thumbnail} />
-        <div className="card-body p-1">
-          <h6 className="">
-            <div className="text-dark">{video.title}</div>
-          </h6>
-        </div>
-        <div className="card-footer p-1 text-muted small" >
-          <div>
-            <span>{moment(video.publishedAt).format('HH:mm DD.MM.YY')} | </span>
-            <span>{parseInt(video.viewCount).toLocaleString()} | </span>
-            <span>{duration}min</span>
+    <div className="video-card">
+      <a style={{textDecoration: 'none'}} href={`https://www.youtube.com/watch?v=${video.id}`} target="blank" >
+        <div className="card">
+          <div className="card-img-top">
+            <img
+            src={thumbnail.url}
+            alt="video_thumbnail"
+            width={thumbnail.width}
+            height={thumbnail.height}
+            />
+            <div className="duration">
+              {duration}
+              <span>min</span>
+            </div>
+          </div>
+          <div className="card-body">
+            {video.title}
+          </div>
+          <div className="card-footer">
+            <div className="date">{moment(video.publishedAt).format('HH:mm DD.MM.YY')}</div>
+            <div className="views">
+              {parseInt(video.viewCount).toLocaleString()}
+              <span>views</span>
+            </div>
           </div>
         </div>
-      </div>
-    </a>
+      </a>
+    </div>
   );
 }

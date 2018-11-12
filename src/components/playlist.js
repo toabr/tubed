@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import data
-import { getPlaylist } from '../data/yt_api'
+import ytApi from '../data/yt_api'
 // import components
 import VideoView from './video_view';
 import VideoData from './video_data';
@@ -21,9 +21,9 @@ export default class Playlist extends Component {
 
     console.log('Playlist - next page', pageToken);
 
-    if (pageToken != undefined) {
+    if (pageToken !== undefined) {
       this.setState({isLoading:true});
-      getPlaylist({ playlistId, maxResult, pageToken }, (response) => {
+      ytApi('playlistItems', { playlistId, maxResult, pageToken }, (response) => {
         let pages = this.state.pages;
         pages.push({
           nextPageToken: response.nextPageToken,
@@ -55,25 +55,12 @@ export default class Playlist extends Component {
       />
     ));
 
-    const renderPage = (videos) => videos.map( video => (
-      <div key={video.id} className={this.props.videoStyles}>
-        <VideoView video={video} />
-      </div>
-    ));
+    const renderPage = videos => videos.map( video => <VideoView key={video.id} video={video} /> );
 
     return (
-      <div style={{minHeight: '120px'}} >
+      <div className="playlist">
         {this.props.render(pages,this.getNextPage)}
-        <div style={{
-          position: 'absolute',
-          bottom: 0,
-          background: 'transparent',
-          fontSize: '35px',
-          textAlign: 'right',
-          height: '100px',
-          width: '50%',
-          paddingTop: '28px'
-        }}>
+        <div className="loader">
           {this.state.isLoading &&
             <i className="fa fa-spinner fa-pulse" ></i>
           }

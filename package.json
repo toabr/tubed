@@ -1,11 +1,13 @@
 {
-  "name": "yt-telly",
+  "name": "telly",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://toabr.github.io/yt-telly",
+  "homepage": "https://toabr.github.io/telly",
   "dependencies": {
     "gh-pages": "^2.0.1",
     "moment": "^2.22.2",
+    "node-sass": "^4.10.0",
+    "prop-types": "^15.6.2",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-masonry-component": "^6.2.1",

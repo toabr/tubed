@@ -1,0 +1,129 @@
+#header {
+  @extend .sticky-top;
+  .navbar-nav {
+    flex-direction: row;
+    .nav-link {
+      @extend .mx-3;
+    }
+  }
+  .btn-menu {
+    @include button-variant(rgba(255,255,255,0.5), $white, $white);
+    @extend .rounded-circle;
+    line-height: 1.28;
+    font-size: 2rem;
+  }
+}
+
+#main {
+  padding-bottom: 200px;
+}
+
+#footer {
+  @extend .bg-dark;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  .link-wrapper {
+    @extend .mx-auto;
+    width: 300px;
+  }
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.channel-list {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  li {
+    padding: 2rem 0;
+    &:not(:first-child) {
+      border-top: 1px solid rgba(0, 0, 0, 0.125);
+    }
+  }
+}
+
+.playlist {
+  min-height: 120px;
+  .loader {
+    position: absolute;
+    bottom: 0;
+    background: transparent;
+    font-size: 35px;
+    text-align: right;
+    height: 100px;
+    width: 50%;
+    padding-top: 28px;
+  }
+}
+
+.home-view {
+  .channel {
+    @extend .col-4, .col-sm-3, .col-md-2, .px-0;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.feed-view, .search-view {
+  .video-card {
+    @extend .col-12, .col-sm-6, .col-md-3, .mt-3;
+  }
+}
+
+.channel-view {
+  .video-card {
+    @extend .col-12, .col-sm-6, .col-md-3, .mt-3;
+  }
+}
+
+.video-card {
+  .card {
+    border: none;
+    @extend .text-dark;
+    .card-img-top {
+      background: $gray-300;
+      position: relative;
+    }
+    .card-body {
+      padding: 5px 0;
+      line-height: 1.35;
+    }
+    .card-footer {
+      @extend .text-muted, .small;
+      border: none;
+      background: unset;
+      padding: 0;
+    }
+    .date {
+      &:after {
+        content: '|';
+        margin: 0 5px;
+      }
+    }
+    .duration {
+      position: absolute;
+      bottom: .5rem;
+      right: .5rem;
+      color: $white;
+      background: rgba(0,0,0,0.5);
+      padding: 0 5px;
+    }
+    .views, .date {
+      display: inline-block;
+    }
+    .views, .duration {
+      span {
+        margin-left: 3px;
+      }
+    }
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}

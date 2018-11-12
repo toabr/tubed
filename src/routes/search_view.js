@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { ytSearch } from '../data/yt_api';
+import ytApi from '../data/yt_api';
 import ChannelList from '../components/channel_list';
 import SearchForm from '../components/search_form';
 
@@ -17,7 +17,7 @@ export default class SearchView extends Component {
 
   onFormSubmit = (e) => {
     e && e.preventDefault();
-    ytSearch({'q':this.state.value}, (data) => {
+    ytApi('search', {'q':this.state.value}, (data) => {
       const channels = data.items.map((channel) => {
         return {
           id: channel.id.channelId,
@@ -30,10 +30,10 @@ export default class SearchView extends Component {
 
   render() {
     return(
-      <React.Fragment>
+      <div className="search-view">
         <SearchForm onInputChange={this.onInputChange} onFormSubmit={this.onFormSubmit} />
         <ChannelList channels={this.state.channels} {...this.props} />
-      </React.Fragment>
+      </div>
     );
   }
 }

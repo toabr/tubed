@@ -29,12 +29,11 @@ export default class ChannelView extends Component {
 
   render() {
     return (
-      <div className="mt-3">
+      <div className="channel-view">
         <Channel channelId={this.props.match.params.id} page={this.state.page} {...this.props} />
         <Playlist
           playlistId={'UU' + this.props.match.params.id.slice(2)}
-          maxResult="12"
-          videoStyles="col-xs-12 col-sm-6 col-md-4 col-lg-3 mt-3"
+          maxResult="16"
           refresh={this.state.refreshToken}
           render={(pages) => {
             return(

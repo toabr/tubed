@@ -28,12 +28,12 @@ export default class FeedView extends Component {
     filteredChannels.sort(function(a, b){return a.weight - b.weight});
 
     return (
-      <React.Fragment>
-        <ul className="nav nav-tabs mt-3 mb-3">
+      <div className="feed-view">
+        <ul className="nav nav-tabs">
           {categorys}
         </ul>
         <ChannelList channels={filteredChannels} {...this.props} />
-      </React.Fragment>
+      </div>
     );
   }
 }

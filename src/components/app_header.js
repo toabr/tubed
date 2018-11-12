@@ -1,38 +1,30 @@
 import React from 'react';
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const NavBtn = function({title,icon,url}) {
   return (
     <NavLink className="nav-link" to={`/${url}`} activeClassName="active" >
-    <div className="rounded py-1 px-3 shadow" >
-      <div className="text-center" style={{lineHeight:'1',fontSize:'208%'}} ><i className={`fa fa-${icon}`}></i></div>
-      {title}
-    </div>
+      <button className="btn btn-menu" >
+        <i className={`fa fa-${icon}`}></i>
+      </button>
     </NavLink>
   );
 }
 
 export default function AppHeader() {
   return(
-    <div className="bg-dark">
+    <header id="header">
       <div className="container">
-        <nav className="navbar bg-dark navbar-dark justify-content-center" >
+        <nav className="navbar justify-content-center">
 
-          <Link className="text-white" to="/">
-            <h1 className="mr-3">
-              <i className="fa fa-youtube mr-3"></i>
-              <span className="text-uppercase font-weight-bold text-white">Telly</span>
-            </h1>
-          </Link>
-
-          <ul className="navbar-nav sticky-top" style={{flexDirection:'row'}}>
-            <li className="nav-item"><NavBtn title="Feed" url="" icon="bars" /></li>
+          <ul className="navbar-nav">
+            <li className="nav-item"><NavBtn title="Home" url="" icon="th" /></li>
+            <li className="nav-item"><NavBtn title="Feed" url="category/New" icon="bars" /></li>
             <li className="nav-item"><NavBtn title="Find" url="find" icon="search" /></li>
-            <li className="nav-item"><NavBtn title="About" url="about" icon="info" /></li>
           </ul>
 
         </nav>
       </div>
-    </div>
+    </header>
   );
 }

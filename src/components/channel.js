@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
+import { Link } from "react-router-dom";
 
-import ChannelInfo from './channel_info';
+import ChannelData from '../components/channel_data';
 import ChannelEdit from './channel_edit';
-import Playlist from './playlist';
 import Btn from './channel_btn';
 
 export default class Channel extends Component {
@@ -43,7 +43,7 @@ export default class Channel extends Component {
 
   setChannel() {
     const channel = this.props.storedChannels.find(element => {
-      return element.id == this.props.channelId;
+      return element.id === this.props.channelId;
     });
     if(channel) {
       this.setState({ inStore: true, channel });
@@ -65,15 +65,37 @@ export default class Channel extends Component {
       }
     }
 
+    const renderChannel = (channel) => (
+      <div className="clearfix">
+
+        {!this.state.inStore &&
+        <Btn state="primary rounded-circle" icon="plus" onClick={() => this.handleAdd(channel)} />}
+
+        <Link to={`/channel/${channel.id}`}>
+          <img className="float-left rounded-circle m-2"
+            width={channel.thumbnails.default.width/1.65}
+            height={channel.thumbnails.default.height/1.65}
+            src={channel.thumbnails.default.url} alt="" />
+          <h2 className="text-dark" style={{display:'inline'}}>{channel.title}</h2>
+        </Link><br/>
+
+        <span>{parseInt(channel.videoCount).toLocaleString()} videos | </span>
+        <span>{parseInt(channel.viewCount).toLocaleString()} views | </span>
+        <span>{parseInt(channel.subscriberCount).toLocaleString()} subscribers</span>
+
+      </div>
+    );
+
     return (
-      <div className="mt-3">
+      <div className="">
         {actionBtn}
-        <ChannelInfo
-          id={this.props.channelId}
-          render={ channel => (
-            !this.state.inStore &&
-            <Btn state="primary rounded-circle" icon="plus" onClick={() => this.handleAdd(channel)} />
-          )}/>
+
+        <ChannelData id={[this.props.channelId]} render={ channels => (
+          <React.Fragment>
+            {channels.length && renderChannel(channels[0])}
+          </React.Fragment>
+        )} />
+
         {this.state.inStore &&
           <ChannelEdit
             channel={this.state.channel}
