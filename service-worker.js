@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.2/workbox-sw.js");
 
 importScripts(
-  "/telly/precache-manifest.70ed8fb7e5aa27e64805448e4d8c1f44.js"
+  "/telly/precache-manifest.f5a0b377acf01849ddcf4b2525fefc4a.js"
 );
 
 workbox.clientsClaim();
