@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-// import components
+import { Link } from "react-router-dom";
+
 import ChannelData from '../components/channel_data';
 
 export default class HomeView extends Component {
@@ -15,14 +16,14 @@ export default class HomeView extends Component {
             <div className="row">
               {channels.map((channel,i) => (
                 <div key={i} className="channel">
-                  <a href={`/channel/${channel.id}`}>
+                  <Link to={`/channel/${channel.id}`}>
                     <img
                       src={channel.thumbnails.medium.url}
                       alt={channel.title}
                       width={channel.thumbnails.medium.width}
                       height={channel.thumbnails.medium.height}
                     />
-                  </a>
+                  </Link>
                 </div>
               ))}
             </div>
