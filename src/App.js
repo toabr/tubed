@@ -96,7 +96,7 @@ export default class App extends Component {
 
   render() {
     return (
-      <Router>
+      <Router basename={'/telly'}>
         <React.Fragment>
           <AppHeader />
           <div id="main" className="container-fluid">
