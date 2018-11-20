@@ -11,6 +11,6 @@
 ### Features
 
 * Search for channels
-* > subscribe
-* > categorize
-* > newsfeed
+* Subscribe to channel
+* Categorize your channels
+* Watch newsfeed
