@@ -1,9 +1,17 @@
+$footer-height: 125px;
+
+#root {
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: $footer-height;
+}
+
 #header {
   @extend .sticky-top;
-  .navbar-nav {
+  nav.main .navbar-nav {
     flex-direction: row;
-    .nav-link {
-      @extend .mx-3;
+    li {
+      @extend .mx-1;
     }
   }
   .btn-menu {
@@ -15,13 +23,13 @@
 }
 
 #main {
-  padding-bottom: 200px;
 }
 
 #footer {
   @extend .bg-dark;
   position: absolute;
   bottom: 0;
+  height: $footer-height;
   width: 100%;
   .link-wrapper {
     @extend .mx-auto;
@@ -33,29 +41,28 @@
   }
 }
 
-.channel-list {
-  display: flex;
-  flex-direction: column;
-  padding-left: 0;
-  li {
-    padding: 2rem 0;
-    &:not(:first-child) {
-      border-top: 1px solid rgba(0, 0, 0, 0.125);
-    }
+@include media-breakpoint-only(xs) {
+  .list-group-flush .list-group-item {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
+.channel-list {
+}
+
 .playlist {
-  min-height: 120px;
+  position: relative;
+  min-height: 80px !important;
   .loader {
     position: absolute;
     bottom: 0;
-    background: transparent;
-    font-size: 35px;
-    text-align: right;
     height: 100px;
-    width: 50%;
+    width: 100%;
     padding-top: 28px;
+    background: unset;
+    font-size: 35px;
+    text-align: center;
   }
 }
 
@@ -69,13 +76,37 @@
   }
 }
 
+.newsfeed-view {
+  .playlist {
+    @extend .col-12, .col-sm-6, .col-md-3, .mt-3;
+    .video-card {
+      // min-height: 120px;
+    }
+  }
+}
+
 .feed-view, .search-view {
   .video-card {
     @extend .col-12, .col-sm-6, .col-md-3, .mt-3;
   }
 }
 
+.categorys-view {
+  h2 {
+    @extend .text-dark;
+  }
+  .channel {
+    @extend .col-3, .col-md-2, .col-lg-1, .mb-2;
+    img {
+      @extend .img-fluid;
+    }
+  }
+}
+
 .channel-view {
+  .playlist {
+    padding-bottom: 120px;
+  }
   .video-card {
     @extend .col-12, .col-sm-6, .col-md-3, .mt-3;
   }
@@ -124,6 +155,19 @@
     img {
       width: 100%;
       height: auto;
+    }
+  }
+  @include media-breakpoint-only(xs) {
+    .card {
+      flex-direction: row;
+      .card-img-top {
+        width: 45%;
+      }
+      .card-body {
+        width: 45%;
+        padding: 0 0 0 5px;
+        font-size: .9rem;
+      }
     }
   }
 }

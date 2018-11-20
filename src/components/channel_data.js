@@ -10,6 +10,7 @@ export default class ChannelData extends Component {
   };
 
   setData(data) {
+    // console.log('ChannelData response', data);
     return data.items.map(item => ({
       id: item.id,
       title: item.snippet.title,

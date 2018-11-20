@@ -25,12 +25,12 @@ export default function VideoView({video}) {
           </div>
           <div className="card-body">
             {video.title}
-          </div>
-          <div className="card-footer">
-            <div className="date">{moment(video.publishedAt).format('HH:mm DD.MM.YY')}</div>
-            <div className="views">
-              {parseInt(video.viewCount).toLocaleString()}
-              <span>views</span>
+            <div className="card-footer">
+              <div className="date">{moment(video.publishedAt).format('HH:mm DD.MM.YY')}</div>
+              <div className="views">
+                {parseInt(video.viewCount).toLocaleString()}
+                <span>views</span>
+              </div>
             </div>
           </div>
         </div>

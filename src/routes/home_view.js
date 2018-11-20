@@ -9,7 +9,7 @@ export default class HomeView extends Component {
     const id = this.props.storedChannels.map(channel => channel.id);
 
     return (
-      <div class="home-view" >
+      <div className="home-view" >
         <ChannelData id={id} render={ channels => {
           // console.log('HomeView:', channels);
           return(
@@ -20,6 +20,7 @@ export default class HomeView extends Component {
                     <img
                       src={channel.thumbnails.medium.url}
                       alt={channel.title}
+                      title={channel.title}
                       width={channel.thumbnails.medium.width}
                       height={channel.thumbnails.medium.height}
                     />

@@ -6,9 +6,11 @@ import localStore from './data/local_store'
 import AppHeader from './components/app_header';
 import AppFooter from './components/app_footer';
 import HomeView from './routes/home_view';
-import FeedView from './routes/feed_view';
-import SearchView from './routes/search_view';
+import NewsfeedView from './routes/newsfeed_view';
+import CategorysView from './routes/categorys_view';
+import CategoryView from './routes/category_view';
 import ChannelView from './routes/channel_view';
+import SearchView from './routes/search_view';
 
 export default class App extends Component {
   state = {
@@ -18,13 +20,19 @@ export default class App extends Component {
       exact: true,
       component: HomeView
     },{
+      path: '/newsfeed',
+      component: NewsfeedView
+    },{
+      path: '/categorys',
+      component: CategorysView
+    },{
       path: '/category/:id',
-      component: FeedView
+      component: CategoryView
     },{
       path: '/channel/:id',
       component: ChannelView
     },{
-      path: '/find',
+      path: '/search',
       component: SearchView
     }]
   }
@@ -96,9 +104,9 @@ export default class App extends Component {
 
   render() {
     return (
-      <Router basename={'/telly'}>
+      <Router basename={'/tubed'}>
         <React.Fragment>
-          <AppHeader />
+          <AppHeader storedChannels={this.state.channels} />
           <div id="main" className="container-fluid">
             {this.state.channels.length > 0 && this.state.routes.map((route, i) =>
                 <Route key={i} {...route} />

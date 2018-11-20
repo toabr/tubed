@@ -7,7 +7,7 @@ import VideoData from './video_data';
 
 export default class Playlist extends Component {
   state = {
-    isLoading: true,
+    isLoading: false,
     pages: [{
       nextPageToken: '',
       ids: []
@@ -21,7 +21,7 @@ export default class Playlist extends Component {
 
     console.log('Playlist - next page', pageToken);
 
-    if (pageToken !== undefined) {
+    if (pageToken !== undefined && !this.state.isLoading) {
       this.setState({isLoading:true});
       ytApi('playlistItems', { playlistId, maxResult, pageToken }, (response) => {
         let pages = this.state.pages;
@@ -30,7 +30,9 @@ export default class Playlist extends Component {
           ids: response.items.map(video => video.contentDetails.videoId)
         });
         this.setState({pages});
-        this.setState({isLoading:false});
+        setTimeout(() => {
+          this.setState({isLoading:false});
+        }, 500);
       });
     }
   }
@@ -60,11 +62,11 @@ export default class Playlist extends Component {
     return (
       <div className="playlist">
         {this.props.render(pages,this.getNextPage)}
-        <div className="loader">
-          {this.state.isLoading &&
+        {this.state.isLoading &&
+          <div className="loader">
             <i className="fa fa-spinner fa-pulse" ></i>
-          }
-        </div>
+          </div>
+        }
       </div>
     );
   }

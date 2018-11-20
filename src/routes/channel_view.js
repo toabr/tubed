@@ -37,7 +37,7 @@ export default class ChannelView extends Component {
           refresh={this.state.refreshToken}
           render={(pages) => {
             return(
-              <div style={{marginBottom: '100px'}} className="row">
+              <div className="row">
                 {pages}
               </div>
           )}}

@@ -13,7 +13,7 @@ function buildUrl(type,opt) {
           + `&q=${opt.q}&type=channel`;
       break;
     case 'channels':
-      url = "https://www.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics"
+      url = "https://www.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2CbrandingSettings%2Cstatistics"
           + `&id=${opt.id}`;
       break;
     case 'playlistItems':
