@@ -12,6 +12,9 @@
 # keys
 /src/data/yt_api_key.js
 
+#screenshots
+/src/img/*.png
+
 # misc
 .DS_Store
 .env.local
