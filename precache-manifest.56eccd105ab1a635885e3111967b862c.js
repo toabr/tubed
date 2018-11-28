@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "/tubed/static/media/fontawesome-webfont.674f50d2.eot"
   },
   {
-    "revision": "8f624954b39277368378",
-    "url": "/tubed/static/css/main.91aaa1e2.chunk.css"
+    "revision": "8f66b7270c29501d3965",
+    "url": "/tubed/static/css/main.9df396a3.chunk.css"
   },
   {
     "revision": "912ec66d7572ff821749319396470bde",
@@ -20,8 +20,8 @@ self.__precacheManifest = [
     "url": "/tubed/static/js/runtime~main.ad68dd8c.js"
   },
   {
-    "revision": "8f624954b39277368378",
-    "url": "/tubed/static/js/main.8f624954.chunk.js"
+    "revision": "8f66b7270c29501d3965",
+    "url": "/tubed/static/js/main.8f66b727.chunk.js"
   },
   {
     "revision": "af7ae505a9eed503f8b8e6982036873e",
@@ -40,7 +40,7 @@ self.__precacheManifest = [
     "url": "/tubed/static/css/1.29354f5e.chunk.css"
   },
   {
-    "revision": "5446718dad30da3aaa64172c0d7e040b",
+    "revision": "28f8bc1396e2ea5e5e33719306dddedc",
     "url": "/tubed/index.html"
   }
 ];
