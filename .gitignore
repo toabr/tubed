@@ -10,7 +10,7 @@
 /build
 
 # keys
-/src/data/yt_api_key.js
+/src/data/schluessel.js
 
 #screenshots
 /src/img/*.png

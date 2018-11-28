@@ -15,7 +15,7 @@ $footer-height: 125px;
     }
   }
   .btn-menu {
-    @include button-variant(rgba(255,255,255,0.5), $white, $white);
+    @include button-variant(rgba(255,255,255,0.80), transparent);
     @extend .rounded-circle;
     line-height: 1.28;
     font-size: 2rem;
@@ -78,7 +78,7 @@ $footer-height: 125px;
 
 .newsfeed-view {
   .playlist {
-    @extend .col-12, .col-sm-6, .col-md-3, .mt-3;
+    @extend .col-12, .col-sm-6, .col-md-3, .mb-3;
     .video-card {
       // min-height: 120px;
     }

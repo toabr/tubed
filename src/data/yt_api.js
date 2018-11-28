@@ -1,4 +1,4 @@
-import apiKey from './yt_api_key';
+import schluessel from './schluessel';
 
 const ytApi = function(type,opt,callback) {
   const url = buildUrl(type,opt);
@@ -28,7 +28,7 @@ function buildUrl(type,opt) {
       break;
     default: url = null;
   }
-  url = (url) ? `${url}&key=${apiKey}` : null;
+  url = (url) ? `${url}&key=${schluessel}` : null;
   return url;
 }
 
