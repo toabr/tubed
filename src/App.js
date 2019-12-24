@@ -82,6 +82,8 @@ export default class App extends Component {
   }
 
   componentDidMount() {
+    console.log('### App mountet, Mode:', process.env.NODE_ENV);
+    
     // build routes props
     let routes = this.state.routes.map( route => ({
       ...route,

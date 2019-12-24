@@ -9,9 +9,6 @@
 # production
 /build
 
-# keys
-/src/data/schluessel.js
-
 #screenshots
 /src/img/*.png
 

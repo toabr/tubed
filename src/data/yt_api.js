@@ -1,5 +1,3 @@
-import schluessel from './schluessel';
-
 const ytApi = function(type,opt,callback) {
   const url = buildUrl(type,opt);
   (url !== null) && get(url,callback);
@@ -28,7 +26,7 @@ function buildUrl(type,opt) {
       break;
     default: url = null;
   }
-  url = (url) ? `${url}&key=${schluessel}` : null;
+  url = (url) ? `${url}&key=${process.env.REACT_APP_GOOGLE_KEY}` : null;
   return url;
 }
 
